@@ -35,7 +35,7 @@ def home():
                 common_names = suggestion["species"].get("commonNames", [])
                 confidence = round(suggestion["score"] * 100, 2)
 
-                # Collect related images (original or small size)
+                # Collect related images
                 images = []
                 for result_item in data["results"]:
                     for img in result_item.get("images", []):
@@ -48,12 +48,12 @@ def home():
                     "scientific_name": scientific_name,
                     "common_names": ', '.join(common_names) if common_names else "Not available",
                     "confidence": confidence,
-                    "images": images[:4]  # show only top 4
+                    "images": images[:4]
                 }
 
                 image_url = "/uploads/" + image.filename
 
-            except Exception as e:
+            except Exception:
                 error = "Could not process the image or response."
 
     return render_template('index.html', result=result, error=error, image_url=image_url)

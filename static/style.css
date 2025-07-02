@@ -1,125 +1,144 @@
-/* static/style.css — Clean Botanical Theme Inspired by bloom-id-explorer */
+/* style.css — Simplified Clean Botanical Theme */
 
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Inter', sans-serif;
-    background-color: #f9fefc;
-    color: #1a3c34;
-    line-height: 1.6;
+    background: linear-gradient(to bottom right, #e3f9ec, #c3e6d3);
+    color: #1c3b2a;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    margin-top: 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    color: #247158;
-    margin-bottom: 0.5rem;
-    text-align: center;
+    color: #205c42;
+    margin-bottom: 10px;
 }
 
 header h1 span {
-    font-weight: 400;
-    font-size: 1.2rem;
     display: block;
-    color: #4a786b;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #357a5a;
+    margin-top: 8px;
 }
 
 .intro {
-    background-color: #e6f4ef;
-    border-radius: 10px;
-    padding: 15px 25px;
-    margin-bottom: 2rem;
     font-size: 0.95rem;
+    padding: 12px 15px;
+    background-color: #f0fbf7;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    color: #275844;
+    text-align: center;
 }
 
 .upload-box {
     text-align: center;
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    background-color: #f6fdfb;
+    border-radius: 15px;
+    border: 1px solid #c4e6d8;
 }
 
 .upload-box input[type="file"] {
-    padding: 10px;
-    margin-bottom: 15px;
+    display: block;
+    margin: 0 auto 12px;
+    padding: 8px;
 }
 
 .upload-box button {
-    padding: 10px 25px;
-    background-color: #247158;
+    padding: 10px 20px;
+    background-color: #2a8a62;
     color: #fff;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 500;
+    font-size: 0.95rem;
     cursor: pointer;
+    margin-top: 8px;
 }
 
 .upload-box button:hover {
-    background-color: #1a5c45;
+    background-color: #216e4d;
 }
 
 .preview {
     margin-top: 20px;
+    text-align: center;
 }
 
 .preview img {
-    max-width: 200px;
-    border-radius: 8px;
-    display: block;
-    margin: 10px auto;
+    max-width: 240px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .results {
     margin-top: 30px;
-    background-color: #f0f9f6;
-    border-left: 4px solid #247158;
-    padding: 15px 25px;
-    border-radius: 8px;
-    text-align: left;
+    padding: 20px;
+    background-color: #e9f7f1;
+    border-left: 5px solid #2a8a62;
+    border-radius: 12px;
+    font-size: 0.95rem;
 }
 
 .results h3 {
-    color: #247158;
+    color: #1e5e45;
     font-size: 1.1rem;
     margin-bottom: 10px;
 }
 
 .related-images {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 15px;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
 }
 
 .related-images img {
-    max-width: 100px;
-    border-radius: 6px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    max-width: 90px;
+    border-radius: 8px;
+    border: 1px solid #b3dfcc;
 }
 
 footer {
-    margin-top: 50px;
+    margin-top: 30px;
     text-align: center;
-    font-size: 0.95rem;
-    color: #5f7c73;
-    border-top: 1px solid #d7ebe4;
-    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #3a6351;
+    padding-top: 15px;
+    border-top: 1px solid #cde7dd;
+}
+
+footer p {
+    margin-bottom: 5px;
+    font-weight: 500;
 }
 
 footer ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0 0 0;
+    margin: 0;
 }
 
 footer li {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 8px;
 }
