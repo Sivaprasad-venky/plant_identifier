@@ -1,0 +1,125 @@
+/* static/style.css — Clean Botanical Theme Inspired by bloom-id-explorer */
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fefc;
+    color: #1a3c34;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #247158;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+header h1 span {
+    font-weight: 400;
+    font-size: 1.2rem;
+    display: block;
+    color: #4a786b;
+}
+
+.intro {
+    background-color: #e6f4ef;
+    border-radius: 10px;
+    padding: 15px 25px;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.upload-box {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.upload-box input[type="file"] {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.upload-box button {
+    padding: 10px 25px;
+    background-color: #247158;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.upload-box button:hover {
+    background-color: #1a5c45;
+}
+
+.preview {
+    margin-top: 20px;
+}
+
+.preview img {
+    max-width: 200px;
+    border-radius: 8px;
+    display: block;
+    margin: 10px auto;
+}
+
+.results {
+    margin-top: 30px;
+    background-color: #f0f9f6;
+    border-left: 4px solid #247158;
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.results h3 {
+    color: #247158;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.related-images {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.related-images img {
+    max-width: 100px;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #5f7c73;
+    border-top: 1px solid #d7ebe4;
+    padding-top: 20px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+footer li {
+    display: inline-block;
+    margin: 0 10px;
+}
