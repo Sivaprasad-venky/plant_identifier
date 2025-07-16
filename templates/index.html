@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -181,15 +180,7 @@
       <p><strong>Scientific Name:</strong> {{ result.scientific_name }}</p>
       <p><strong>Common Names:</strong> {{ result.common_names }}</p>
       <p><strong>Confidence:</strong> {{ result.confidence }}%</p>
-
-      {% if result.uses %}
-      <p><strong>Uses:</strong></p>
-      <ul>
-        {% for use in result.uses %}
-          <li>{{ use }}</li>
-        {% endfor %}
-      </ul>
-      {% endif %}
+      <p><strong>Uses:</strong> {{ result.uses }}</p>
 
       {% if result.images %}
       <div class="plant-images">
@@ -212,7 +203,7 @@
     <div class="rolls">
       23X51A3327 • 23X51A3308 • 23X51A3361 • 23X51A3312
     </div>
-    <div style="margin-top:6px;">Project Code: <strong>Cspsrec@12</strong></div>
+    <div class="rolls">© Cspsrec@12</div>
   </footer>
 
   <script>
