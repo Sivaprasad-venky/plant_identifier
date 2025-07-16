@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, send_from_directory
 import os
 import requests
+import wikipedia
 
 app = Flask(__name__)
 
@@ -17,14 +18,8 @@ def home():
             image_path = os.path.join("uploads", image.filename)
             image.save(image_path)
 
-            files = {
-                'images': open(image_path, 'rb')
-            }
-
-            params = {
-                'api-key': '2b10pviSH012yTWRGr2mo2Ye'  # Your actual API key
-            }
-
+            files = {'images': open(image_path, 'rb')}
+            params = {'api-key': '2b10pviSH012yTWRGr2mo2Ye'}
             response = requests.post("https://my-api.plantnet.org/v2/identify/all", files=files, params=params)
 
             try:
@@ -35,39 +30,27 @@ def home():
                 common_names = suggestion["species"].get("commonNames", [])
                 confidence = round(suggestion["score"] * 100, 2)
 
-                # Collect related images
+                # Get Wikipedia summary (uses)
+                try:
+                    wiki_summary = wikipedia.summary(scientific_name, sentences=3)
+                except:
+                    wiki_summary = "Uses not available."
+
+                # Related images
                 images = []
-                for result_item in data["results"]:
-                    for img in result_item.get("images", []):
+                for item in data["results"]:
+                    for img in item.get("images", []):
                         url = img.get("url", {})
                         img_url = url.get("o") or url.get("s")
                         if img_url:
                             images.append(img_url)
-
-                # 🔥 Sample uses (You can expand this later)
-                sample_uses = {
-                    "Ocimum tenuiflorum": [
-                        "Used to treat respiratory issues like cough and cold",
-                        "Boosts immunity and reduces stress",
-                        "Helpful in digestion and skin problems"
-                    ],
-                    "Azadirachta indica": [
-                        "Used as a natural pesticide",
-                        "Treats skin disorders",
-                        "Purifies blood and improves liver function"
-                    ]
-                }
 
                 result = {
                     "scientific_name": scientific_name,
                     "common_names": ', '.join(common_names) if common_names else "Not available",
                     "confidence": confidence,
                     "images": images[:4],
-                    "uses": sample_uses.get(scientific_name, [
-                        "Helps in traditional medicine",
-                        "Used in herbal remedies",
-                        "Has natural healing properties"
-                    ])
+                    "uses": wiki_summary
                 }
 
                 image_url = "/uploads/" + image.filename
@@ -83,4 +66,3 @@ def uploaded_file(filename):
 
 if __name__ == '__main__':
     app.run(debug=True)
-
