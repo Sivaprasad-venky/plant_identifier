@@ -22,7 +22,7 @@ def home():
             }
 
             params = {
-                'api-key': '2b10pviSH012yTWRGr2mo2Ye'
+                'api-key': '2b10pviSH012yTWRGr2mo2Ye'  # Your actual API key
             }
 
             response = requests.post("https://my-api.plantnet.org/v2/identify/all", files=files, params=params)
@@ -44,16 +44,35 @@ def home():
                         if img_url:
                             images.append(img_url)
 
+                # 🔥 Sample uses (You can expand this later)
+                sample_uses = {
+                    "Ocimum tenuiflorum": [
+                        "Used to treat respiratory issues like cough and cold",
+                        "Boosts immunity and reduces stress",
+                        "Helpful in digestion and skin problems"
+                    ],
+                    "Azadirachta indica": [
+                        "Used as a natural pesticide",
+                        "Treats skin disorders",
+                        "Purifies blood and improves liver function"
+                    ]
+                }
+
                 result = {
                     "scientific_name": scientific_name,
                     "common_names": ', '.join(common_names) if common_names else "Not available",
                     "confidence": confidence,
-                    "images": images[:4]
+                    "images": images[:4],
+                    "uses": sample_uses.get(scientific_name, [
+                        "Helps in traditional medicine",
+                        "Used in herbal remedies",
+                        "Has natural healing properties"
+                    ])
                 }
 
                 image_url = "/uploads/" + image.filename
 
-            except Exception:
+            except Exception as e:
                 error = "Could not process the image or response."
 
     return render_template('index.html', result=result, error=error, image_url=image_url)
@@ -64,3 +83,4 @@ def uploaded_file(filename):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
