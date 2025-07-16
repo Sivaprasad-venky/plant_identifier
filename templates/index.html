@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,12 +150,6 @@
       font-size: 0.9rem;
       color: #4b6f5b;
     }
-
-    .credit {
-      font-size: 0.85rem;
-      color: #5c7c68;
-      margin-top: 10px;
-    }
   </style>
 </head>
 <body>
@@ -187,6 +182,15 @@
       <p><strong>Common Names:</strong> {{ result.common_names }}</p>
       <p><strong>Confidence:</strong> {{ result.confidence }}%</p>
 
+      {% if result.uses %}
+      <p><strong>Uses:</strong></p>
+      <ul>
+        {% for use in result.uses %}
+          <li>{{ use }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
       {% if result.images %}
       <div class="plant-images">
         {% for img in result.images %}
@@ -208,7 +212,7 @@
     <div class="rolls">
       23X51A3327 • 23X51A3308 • 23X51A3361 • 23X51A3312
     </div>
-    <div class="credit">Cspsrec@12</div>
+    <div style="margin-top:6px;">Project Code: <strong>Cspsrec@12</strong></div>
   </footer>
 
   <script>
